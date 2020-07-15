@@ -24,7 +24,7 @@ Route::get('/insert', function(){
 
     $user = User::findOrFail(1);
 
-    $address = new Address(['name'=>'1234 Houston Avenue NY Ny 11218']);
+    $address = new Address(['name'=>'589 Washington road WH WS 11218']);
 
     $user->address()->save($address);
 
