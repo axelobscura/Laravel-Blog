@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\User;
+use App\Address;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/insert', function(){
+
+    $user = User::findOrFail(1);
+
+    $address = new Address(['name'=>'1234 Houston Avenue NY Ny 11218']);
+
+    $user->address()->save($address);
+
 });
