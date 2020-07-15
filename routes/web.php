@@ -39,3 +39,11 @@ Route::get('/update', function(){
     $address->save();
 
 });
+
+Route::get('/read', function(){
+
+    $user = User::findOrFail(1);
+
+    echo $user->address->name;
+
+});
