@@ -47,3 +47,13 @@ Route::get('/read', function(){
     echo $user->address->name;
 
 });
+
+Route::get('/delete', function(){
+
+    $user = User::findOrFail(1);
+
+    $user->address()->delete();
+
+    return "done";
+
+});
